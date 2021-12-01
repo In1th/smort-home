@@ -1,0 +1,40 @@
+[api-updater (non-obsolete-error-filter)] 30/11/2021 12:52:51 : Starting /home/kruk/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 91.953ms
+moved types parse time: 46ms
+candidates parse time : 0ms
+C# parse time         : 182ms
+candidates check time : 26ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 30/11/2021 12:55:37 : Starting /home/kruk/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 38.276ms
+moved types parse time: 43ms
+candidates parse time : 0ms
+C# parse time         : 194ms
+candidates check time : 32ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 30/11/2021 12:55:55 : Starting /home/kruk/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 55.365ms
+moved types parse time: 42ms
+candidates parse time : 1ms
+C# parse time         : 166ms
+candidates check time : 30ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 30/11/2021 12:57:18 : Starting /home/kruk/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 37.122ms
+moved types parse time: 42ms
+candidates parse time : 0ms
+C# parse time         : 168ms
+candidates check time : 28ms
+console write time    : 0ms
+
