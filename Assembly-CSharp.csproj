@@ -54,11 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\Window.cs" />
-    <Compile Include="Assets\Scripts\SlideAddButtonsAnim.cs" />
-    <Compile Include="Assets\Scripts\SliderMenuAnim.cs" />
-    <Compile Include="Assets\Scripts\Regular_Window.cs" />
-    <Compile Include="Assets\Scripts\WindowManager.cs" />
+    <Compile Include="Assets\Scripts\WindowScripts\Regular_Window.cs" />
+    <Compile Include="Assets\Scripts\WindowScripts\Window.cs" />
+    <Compile Include="Assets\Scripts\Sliders\SlideAddButtonsAnim.cs" />
+    <Compile Include="Assets\Scripts\Sliders\SliderMenuAnim.cs" />
+    <Compile Include="Assets\Scripts\WindowScripts\WindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
