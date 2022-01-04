@@ -7,7 +7,7 @@ public class SliderMenuAnim : MonoBehaviour
 {
     public GameObject PanelMenu;
     public Button menuButton;
-
+    
 
     public void ShowHideMenu(){
     

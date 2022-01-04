@@ -1,22 +1,22 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public Text tittle;
+
     public Window currentWindow;
 
-    public Window[] widows;
+    [HideInInspector] public SliderMenuAnim sliderAnim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        sliderAnim = GetComponent<SliderMenuAnim>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+
 }
