@@ -9,6 +9,12 @@ public class SliderMenuAnim : MonoBehaviour
     public GameObject DimingScreen;
     public Button menuButton;
 
+    public string sliderBool = "show";
+    public string dimBool = "dim";
+
+    public string closedChar = "☰";
+    public string openChar = "X";
+
     public void ShowHideMenu(){
     
         if (PanelMenu != null && DimingScreen != null){
@@ -16,20 +22,33 @@ public class SliderMenuAnim : MonoBehaviour
             Animator dimingAnimator = DimingScreen.GetComponent<Animator>();
             
             if (animator != null){
-                bool isOpen = animator.GetBool("show");
-                animator.SetBool("show",!isOpen);
-                if (dimingAnimator != null) dimingAnimator.SetBool("dim",!isOpen);
+                bool isOpen = animator.GetBool(sliderBool);
+                animator.SetBool(sliderBool,!isOpen);
+                if (dimingAnimator != null) dimingAnimator.SetBool(dimBool, !isOpen);
 
                 if (menuButton != null){
                     Text buttonText = menuButton.GetComponentInChildren<Text>();
                     if (!isOpen)
-                        buttonText.text = "X";
-                    else 
-                        buttonText.text = "☰";
+                        buttonText.text = openChar;
+                    else
+                        buttonText.text = closedChar;
          }
             }
         }
     
+    }
+
+    public bool IsSliderOpen()
+    {
+        if (PanelMenu != null)
+        {
+            Animator animator = PanelMenu.GetComponent<Animator>();
+            if (animator != null)
+            {
+                return animator.GetBool(sliderBool);
+            }
+        }
+        return false;
     }
 
     

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Window :ScriptableObject
 {
+    
     public string windowName;
     protected GameObject windowReference;
 
@@ -21,7 +22,6 @@ public abstract class Window :ScriptableObject
             if (windowAnimator != null)
             {
                 bool isClosed = windowAnimator.GetBool("closed");
-                Debug.Log(isClosed);
                 windowAnimator.SetBool("closed", !isClosed);
             }
         }

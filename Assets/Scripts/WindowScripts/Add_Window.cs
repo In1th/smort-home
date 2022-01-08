@@ -1,7 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Window")]
-public class Regular_Window : Window
+[CreateAssetMenu(menuName = "Window/Adding Window")]
+public class Add_Window : Window
 {
 
     public override void WindowButtonClick(GameController controller)
@@ -13,9 +15,13 @@ public class Regular_Window : Window
             controller.currentWindow = this;
             controller.tittleComponent.text = windowName;
         }
-        if (controller.sliderAnim.IsSliderOpen())
+        if (controller.addAnim.IsShown())
         {
-            controller.sliderAnim.ShowHideMenu();
+            controller.addAnim.ShowHideAddButtons();
         }
+        controller.StartToAdd(windowName);
+
+        //przygotuj siê do przyjmowania danych
     }
+
 }

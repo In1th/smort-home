@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WindowManager : MonoBehaviour
 {
-
+    [Header("Window References")]
     public Window[] windows;
     public GameObject[] windowPanels;
 
@@ -32,6 +33,11 @@ public class WindowManager : MonoBehaviour
     {
         if (windowMap.ContainsKey(name)) 
             windowMap[name].WindowButtonClick(controller);
+    }
 
+    public Window GetWindowByName(string name)
+    {
+        if (windowMap.ContainsKey(name)) return windowMap[name];
+        return null;
     }
 }
