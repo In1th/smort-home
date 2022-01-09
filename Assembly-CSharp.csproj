@@ -54,14 +54,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\OptionsToAdd.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\Regular_Window.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\Window.cs" />
     <Compile Include="Assets\Scripts\Sliders\SlideAddButtonsAnim.cs" />
     <Compile Include="Assets\Scripts\Sliders\SliderMenuAnim.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\WindowManager.cs" />
-    <Compile Include="Assets\Scripts\WindowScripts\Add_Window.cs" />
     <Compile Include="Assets\Scripts\Argument.cs" />
-    <Compile Include="Assets\Scripts\OptionsToAdd.cs" />
+    <Compile Include="Assets\Scripts\WindowScripts\Add_Window.cs" />
+    <Compile Include="Assets\FlexibleColorPicker\Scripts\FlexibleColorPicker.cs" />
+    <Compile Include="Assets\FlexibleColorPicker\Scripts\FCP_SpriteMeshEditor.cs" />
+    <Compile Include="Assets\FlexibleColorPicker\ExampleScene\FCP_ExampleScript.cs" />
+    <Compile Include="Assets\FlexibleColorPicker\Scripts\FCP_Persistence.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\FlexibleColorPicker\Materials\FCP_Gradient.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
