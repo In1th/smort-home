@@ -11,7 +11,13 @@ public class GameController : MonoBehaviour
     public Text tittleComponent;
     public Window currentWindow;
 
+    [Header("Button Adding New Elements")]
     public Button[] addButtons;
+
+    [Header("Testing Buttons")]
+    public Button deviceSypialniaButton;
+    public Button deviceKuchniaButton;
+    public Button routineButton;
 
     [HideInInspector] public SliderMenuAnim sliderAnim;
     [HideInInspector] public SlideAddButtonsAnim addAnim;
@@ -40,7 +46,7 @@ public class GameController : MonoBehaviour
     {
         if (addedCategory != "" && currentAddButton != null)
         {
-            if (addedArguments.Count == 2)
+            if (addedArguments.Count == 3)
                 currentAddButton.interactable = true;
             else
                 currentAddButton.interactable = false;
@@ -49,11 +55,11 @@ public class GameController : MonoBehaviour
     }
     public void StartToAdd(string whatToAdd)
     {
+        ResetUsedButtons();
         addedArguments.Clear();
         usedAddButtons.Clear();
         addedCategory = whatToAdd;
         currentAddButton = nameToAddButton[whatToAdd];
-        Debug.Log(whatToAdd);
     }
 
     public void SumbitAdding()
@@ -62,6 +68,10 @@ public class GameController : MonoBehaviour
         {
             Debug.Log(addedValue.Value);
         }
+        if (addedCategory == "Dodaj urz¹dzenia")
+            AddDeviceToButton();
+        else if (addedCategory == "Dodaj rutynê")
+            AddRoutineToButton();
     }
 
     public void AddToForm(Button buttonPressed)
@@ -84,6 +94,63 @@ public class GameController : MonoBehaviour
                     usedAddButtons[arg.argumentName].interactable = false;
                 }
             }
+        }
+    }
+
+    public void AddToForm(Dropdown optionChoosen)
+    {
+
+        if (optionChoosen != null)
+        {
+            Argument arg = optionChoosen.GetComponent<Argument>();
+            if (arg != null && arg.category == addedCategory)
+            {
+                String argText = optionChoosen.options[optionChoosen.value].text;
+                if (argText != null)
+                {
+                    addedArguments[arg.argumentName] = argText;
+                }
+            }
+        }
+    }
+
+    public void AddToForm(InputField name)
+    {
+        if (name != null)
+        {
+            Argument arg = name.GetComponent<Argument>();
+            if (arg != null && arg.category == addedCategory)
+            {
+            addedArguments[arg.argumentName] = name.text;
+            }
+        }
+    }
+
+    public void ResetUsedButtons()
+    {
+        foreach (var arg in usedAddButtons)
+        {
+            arg.Value.interactable = true;
+        }
+    }
+
+    public void AddDeviceToButton()
+    {
+        string roomName = addedArguments["RoomName"];
+        Button buttonUsed = (roomName == "Sypialnia 1") ? deviceSypialniaButton : deviceKuchniaButton;
+        if (buttonUsed != null)
+        {
+            Text text = buttonUsed.GetComponentInChildren<Text>();
+            text.text = addedArguments["Name"];
+        }
+    }
+
+    public void AddRoutineToButton()
+    {
+        if (routineButton != null)
+        {
+            Text text = routineButton.GetComponentInChildren<Text>();
+            text.text = addedArguments["Name"];
         }
     }
 

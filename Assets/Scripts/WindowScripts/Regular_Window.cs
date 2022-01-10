@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Window")]
+[CreateAssetMenu(menuName ="Window/Regular Window")]
 public class Regular_Window : Window
 {
 
