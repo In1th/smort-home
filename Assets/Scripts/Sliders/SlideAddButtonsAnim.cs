@@ -39,6 +39,20 @@ public class SlideAddButtonsAnim : MonoBehaviour
         }
     }
 
+    public void ShowHideMainButton(bool hide)
+    {
+        Debug.Log(hide);
+        if (slider != null)
+        {
+            Animator animator = slider.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetBool("hide", hide);
+
+            }
+        }
+    }
+
     string GetButtonText(bool isShown)
     {
         return (isShown) ? closedChar: openChar;

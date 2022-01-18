@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log(addedValue.Value);
         }
-        if (addedCategory == "Dodaj urz¹dzenia")
+        if (addedCategory == "Dodaj urz¹dzenie")
             AddDeviceToButton();
         else if (addedCategory == "Dodaj rutynê")
             AddRoutineToButton();
@@ -136,10 +136,17 @@ public class GameController : MonoBehaviour
 
     public void AddDeviceToButton()
     {
-        string roomName = addedArguments["RoomName"];
-        Button buttonUsed = (roomName == "Sypialnia 1") ? deviceSypialniaButton : deviceKuchniaButton;
+        string roomName = addedArguments["DeviceRoom"];
+        Button buttonUsed = null;
+
+        switch (roomName)
+        {
+            case "Kuchnia": buttonUsed = deviceKuchniaButton; break;
+            case "Sypialnia 1": buttonUsed = deviceSypialniaButton; break;
+        }
         if (buttonUsed != null)
         {
+
             Text text = buttonUsed.GetComponentInChildren<Text>();
             text.text = addedArguments["Name"];
         }
