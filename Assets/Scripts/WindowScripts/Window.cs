@@ -5,6 +5,8 @@ public abstract class Window :ScriptableObject
 {
     
     public string windowName;
+    public bool hidePlusButton;
+    public bool hasToReturn;
     protected GameObject windowReference;
 
 

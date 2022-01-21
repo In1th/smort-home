@@ -54,26 +54,56 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\FlexibleColorPicker\Scripts\FCP_Persistence.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\OptionsToAdd.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameController.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\Regular_Window.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\Window.cs" />
-    <Compile Include="Assets\Scripts\DeviceManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\DeviceManager.cs" />
     <Compile Include="Assets\FlexibleColorPicker\Scripts\FlexibleColorPicker.cs" />
     <Compile Include="Assets\Scripts\Sliders\SlideAddButtonsAnim.cs" />
-    <Compile Include="Assets\Scripts\LightbulbController.cs" />
-    <Compile Include="Assets\Scripts\HeaderController.cs" />
+    <Compile Include="Assets\Scripts\Managers\LightbulbController.cs" />
+    <Compile Include="Assets\Scripts\WindowScripts\Content_Window.cs" />
+    <Compile Include="Assets\Scripts\Managers\HeaderController.cs" />
+    <Compile Include="Assets\Scripts\menuButton.cs" />
     <Compile Include="Assets\Scripts\Sliders\SliderMenuAnim.cs" />
     <Compile Include="Assets\FlexibleColorPicker\Scripts\FCP_SpriteMeshEditor.cs" />
-    <Compile Include="Assets\Scripts\ButtonController.cs" />
+    <Compile Include="Assets\Scripts\Managers\ButtonController.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\WindowManager.cs" />
     <Compile Include="Assets\Scripts\Argument.cs" />
     <Compile Include="Assets\Scripts\WindowScripts\Add_Window.cs" />
-    <Compile Include="Assets\FlexibleColorPicker\ExampleScene\FCP_ExampleScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\addDevice.cs" />
+    <Compile Include="Assets\Scripts\ArgumentList.cs" />
     <Compile Include="Assets\Scripts\AlertBox.cs" />
+    <Compile Include="Assets\FlexibleColorPicker\ExampleScene\FCP_ExampleScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\RoutineManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\AddRoutine.cs" />
+    <Compile Include="Assets\Scripts\Reset\Reset.cs" />
+    <Compile Include="Assets\Scripts\Reset\ResetAddRoom.cs" />
+    <Compile Include="Assets\Scripts\Reset\ResetAddDevice.cs" />
+    <Compile Include="Assets\Scripts\Reset\ResetAddRoutine.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\FlexibleColorPicker\Materials\FCP_Gradient.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

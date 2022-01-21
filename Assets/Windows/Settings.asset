@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   windowName: Ustawienia
+  hidePlusButton: 1
+  hasToReturn: 0

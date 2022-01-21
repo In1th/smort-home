@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Add Device
   m_EditorClassIdentifier: 
   windowName: "Dodaj urz\u0105dzenie"
+  hidePlusButton: 1
+  hasToReturn: 1

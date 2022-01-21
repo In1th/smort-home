@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Add Routine
   m_EditorClassIdentifier: 
   windowName: "Dodaj rutyn\u0119"
+  hidePlusButton: 1
+  hasToReturn: 1

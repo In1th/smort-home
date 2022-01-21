@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PRO
   m_EditorClassIdentifier: 
   windowName: PRO
+  hidePlusButton: 1
+  hasToReturn: 0

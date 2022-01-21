@@ -10,7 +10,7 @@ public class SlideAddButtonsAnim : MonoBehaviour
     public string menuBool = "show";
 
     public string closedChar = "+";
-    public string openChar = "✓";
+    public string openChar = "X";
 
     private void Start()
     {
@@ -41,7 +41,6 @@ public class SlideAddButtonsAnim : MonoBehaviour
 
     public void ShowHideMainButton(bool hide)
     {
-        Debug.Log(hide);
         if (slider != null)
         {
             Animator animator = slider.GetComponent<Animator>();

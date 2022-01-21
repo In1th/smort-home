@@ -749,7 +749,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e1e8d52ac91c33946b8a180307cc07ed, type: 3}
-    m_FontSize: 46
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -760,7 +760,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: THEN
+  m_Text: "ZR\xD3B"
 --- !u!1 &109774713681258250
 GameObject:
   m_ObjectHideFlags: 0

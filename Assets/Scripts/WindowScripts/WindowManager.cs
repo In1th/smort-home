@@ -31,8 +31,12 @@ public class WindowManager : MonoBehaviour
 
     public void UpdateWindow(string name)
     {
-        if (windowMap.ContainsKey(name)) 
+        if (windowMap.ContainsKey(name))
+        {
+            controller.OnExitButtonChanged(windowMap[name].hasToReturn);
             windowMap[name].WindowButtonClick(controller);
+            controller.addAnim.ShowHideMainButton(windowMap[name].hidePlusButton);
+        }
     }
 
     public Window GetWindowByName(string name)
@@ -40,4 +44,5 @@ public class WindowManager : MonoBehaviour
         if (windowMap.ContainsKey(name)) return windowMap[name];
         return null;
     }
+
 }

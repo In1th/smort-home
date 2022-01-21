@@ -2,14 +2,18 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-    [Header("User References")]
+
+    public static GameObject buttonOptionPrefab;
+    public static GameObject headerPrefab;
 
     [Header("Window References")]
     public Text tittleComponent;
     public Window currentWindow;
+
 
     [Header("Button Adding New Elements")]
     public Button[] addButtons;
@@ -21,20 +25,23 @@ public class GameController : MonoBehaviour
 
     [HideInInspector] public SliderMenuAnim sliderAnim;
     [HideInInspector] public SlideAddButtonsAnim addAnim;
-
+    [HideInInspector] public WindowManager windowManager;
 
     private string addedCategory = "";
-    private Dictionary<string, string> addedArguments = new Dictionary<string, string>();
+    public Dictionary<string, string> addedArguments = new Dictionary<string, string>();
     private Dictionary<string, Button> usedAddButtons = new Dictionary<string, Button>();
 
     private Dictionary<string, Button> nameToAddButton = new Dictionary<string, Button>();
     private Button currentAddButton;
+
+    private string previousWindowName;
 
     // Start is called before the first frame update
     void Start()
     {
         sliderAnim = GetComponent<SliderMenuAnim>();
         addAnim = GetComponent<SlideAddButtonsAnim>();
+        windowManager = GetComponent<WindowManager>();
         foreach (var button in addButtons)
         {
             Argument arg = button.GetComponent<Argument>();
@@ -48,6 +55,8 @@ public class GameController : MonoBehaviour
         {
             if (addedArguments.Count == 3)
                 currentAddButton.interactable = true;
+            else if (addedArguments.Count == 1 && addedCategory == "Dodaj pokój")
+                currentAddButton.interactable = true;
             else
                 currentAddButton.interactable = false;
         }
@@ -55,7 +64,6 @@ public class GameController : MonoBehaviour
     }
     public void StartToAdd(string whatToAdd)
     {
-        ResetUsedButtons();
         addedArguments.Clear();
         usedAddButtons.Clear();
         addedCategory = whatToAdd;
@@ -126,6 +134,19 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public List<string> GetMissingValues(List<string> argList)
+    {
+        List<string> result = new List<string>();
+
+        foreach(string arg in argList)
+        {
+            if (!addedArguments.ContainsKey(arg))
+                result.Add(arg);
+        }
+
+        return result;
+    }
+
     public void ResetUsedButtons()
     {
         foreach (var arg in usedAddButtons)
@@ -159,6 +180,32 @@ public class GameController : MonoBehaviour
             Text text = routineButton.GetComponentInChildren<Text>();
             text.text = addedArguments["Name"];
         }
+    }
+
+
+
+    public void OnExitButtonChanged(bool isPrevious)
+    {
+        string newCharacter;
+        UnityAction call;
+
+        if (isPrevious)
+        {
+            newCharacter = sliderAnim.openChar;
+            previousWindowName = currentWindow.windowName;
+            call = delegate { windowManager.UpdateWindow(previousWindowName); };
+        }
+        else
+        {
+            newCharacter = sliderAnim.closedChar;
+            call = sliderAnim.ShowHideMenu;
+        }
+
+        Text buttonText = sliderAnim.menuButton.GetComponentInChildren<Text>();
+        buttonText.text = newCharacter;
+
+        sliderAnim.menuButton.onClick.RemoveAllListeners();
+        sliderAnim.menuButton.onClick.AddListener(call);
     }
 
 }

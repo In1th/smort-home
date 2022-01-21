@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionsToAdd 
+public abstract class Reset : MonoBehaviour
 {
-    enum deviceOptions{DeviceName};    
+    public abstract void ResetThis();
 }

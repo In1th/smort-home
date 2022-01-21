@@ -20,6 +20,7 @@ public class Add_Window : Window
             controller.addAnim.ShowHideAddButtons();
         }
         controller.StartToAdd(windowName);
+        windowReference.GetComponent<Reset>().ResetThis();
 
         //przygotuj siê do przyjmowania danych
     }
